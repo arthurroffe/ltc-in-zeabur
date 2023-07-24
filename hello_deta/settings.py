@@ -141,7 +141,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTStatelessUserAuthentication'
     ],
-    # 'DEFAULT_PAGINATION_CLASS': 'accounts.pagination.CustomPagination',
+    'DEFAULT_PAGINATION_CLASS': 'account.pagination.CustomPagination',
     'DEFAULT_PARSER_CLASSES': ['rest_framework.parsers.JSONParser'],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
@@ -159,3 +159,4 @@ SIMPLE_JWT = {
 }
 
 SPECTACULAR_SETTINGS = spectacular_settings
+AUTHENTICATION_BACKENDS = ['account.backend.ModelBackend']

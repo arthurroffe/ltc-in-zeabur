@@ -1,6 +1,31 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, BaseUserManager
 # Create your models here.
+
+
+# class AccountManaager(BaseUserManager):
+#     def create_user(self, account, password=None):
+#         if not account:
+#             raise ValueError('You must have an email address')
+#         user = self.model(
+#             account=self.normalize_email(account)
+#         )
+
+#         user.set_password(password)
+#         user.save()
+
+#         return user
+
+#     def create_superuser(self, account, password=None):
+#         user = self.create_user(
+#             account,
+#             password=password,
+#         )
+
+#         user.is_superuser = True
+#         user.save(using=self._db)
+
+#         return user
 
 
 class UserInfo(models.Model):
